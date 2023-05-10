@@ -5,19 +5,26 @@
 # Например 1, 1, 1 --> "Равносторонний"
 
 def which_triangle(a, b, c):
-    
-  
-    return type_triangle
+
+        if a + b <= c or a + c <= b or b + c <= a:
+            type_triangle = "Не треугольник"
+        elif a != b and a != c and b != c:
+            type_triangle = "Обычный"
+        elif a == b == c:
+            type_triangle = "Равносторонний"
+        else:
+            type_triangle = "Равнобедренный"
+        return type_triangle
 
 # Ниже НИЧЕГО НЕ НАДО ИЗМЕНЯТЬ
 
 
 data = [
-    (3, 3, 3),
-    (1, 2, 2),
+   (3, 3, 3),
+   (1, 2, 2),
     (3, 4, 5),
-    (3, 2, 3),
-    (1, 2, 3)
+   (3, 2, 3),
+   (1, 2, 3)
 ]
 
 test_data = [
