@@ -1,17 +1,10 @@
-# �������� ������� flatten_and_sort, ������� ��������� �������� ������ (������ �������) array,
-# � ���������� "�������" ������ �� ����� ������� � ������� ����������� result_list
-# �������� (���� --> �����) :
-#
-# [[3, 2, 1], [4, 6, 5], [], [9, 7, 8]] -->  [1, 2, 3, 4, 5, 6, 7, 8, 9]
-
-
 def flatten_and_sort(array):
     result_list = []
     for i in array:
         result_list.extend(i)
+        result_list.sort()
     return result_list
 
-# ���� ������ �� ���� ��������
 
 
 data = [

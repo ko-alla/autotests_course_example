@@ -25,6 +25,6 @@ test_data = [
 
 
 for i, d in enumerate(data):
-    assert sum_digits(d) == test_data[i], f'� ������� {d} ���� ������, �� �������� ��������'
-    print(f'�������� ����� {d} ������ ��������')
-print('�� ��')
+    assert sum_digits(d) == test_data[i], f'С набором {d} есть ошибка, не проходит проверку'
+    print(f'Тестовый набор {d} прошёл проверку')
+print('Всё ок')
