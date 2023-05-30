@@ -1,12 +1,22 @@
-all_roman = [(1000, 'M'), (900, 'CM'), (500, 'D'), (400, 'CD'), (100, 'C'), (90, 'XC'), (50, 'L'), (40, 'XL'), (10, 'X'), (9, 'IX'), (5, 'V'), (4, 'IV'), (1, 'I')]
+from enum import Enum
 
-class RomanNums:
+class RomanNums(Enum):
+    M  = 1000
+    CM = 900
+    D  = 500
+    CD = 400
+    C  = 100
+    XC = 90
+    L  = 50
+    XL = 40
+    X  = 10
+    IX = 9
+    V  = 5
+    IV = 4
+    I  = 1
 
-    def to_roman(val):
-        roman_str = ''
-        while val > 0:
-            for i, r in all_roman:
-                while val >= i:
-                    roman_str += r
-                    val -= i
-        return roman_str
+    @classmethod
+    def from_roman(cls, n):
+        for numeral in cls:
+            rep, n = divmod(n, numeral.value)
+            yield numeral.name * rep
