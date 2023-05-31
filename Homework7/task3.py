@@ -26,10 +26,12 @@ class Bus(PublicTransport):
     @property
 
     def park(self):
-            if self.__park in [1000, 9999]:
                 return self.__park
-            else:
-                return False
+
+    @park.setter
+    def park(self, value):
+        assert 1000 <= value <= 9999
+        self.__park = value
 
 class Tram(PublicTransport):
     def __init__(self, brand, engine_power, year, color, max_speed, route, path, fare):
