@@ -11,14 +11,12 @@ class Segment:
     def x_axis_intersection(self):
         if self.y1 * self.y2 < 0:
             return True
-        else:
-            return False
+
 
     def y_axis_intersection(self):
         if self.x1 * self.x2 < 0:
             return True
-        else:
-            return False
+
 
 data = [Segment((2, 3), (4, 5)).length,
         Segment((1, 1), (1, 8)).length,
